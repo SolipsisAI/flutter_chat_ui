@@ -62,6 +62,7 @@ class Chat extends StatefulWidget {
     this.onTextFieldTap,
     this.scrollPhysics,
     this.sendButtonVisibilityMode = SendButtonVisibilityMode.editing,
+    this.showTyping = false,
     this.showUserAvatars = false,
     this.showUserNames = false,
     this.textMessageBuilder,
@@ -235,6 +236,9 @@ class Chat extends StatefulWidget {
 
   /// See [InheritedUser.user]
   final types.User user;
+
+  /// Show typing indicator
+  final bool showTyping;
 
   @override
   _ChatState createState() => _ChatState();
@@ -465,9 +469,9 @@ class _ChatState extends State<Chat> {
                               ),
                             ),
                     ),
-                    const Align(
+                    Align(
                       alignment: Alignment.bottomLeft,
-                      child: TypingIndicator(showIndicator: true),
+                      child: TypingIndicator(showIndicator: widget.showTyping),
                     ),
                     widget.customBottomWidget ??
                         Input(
