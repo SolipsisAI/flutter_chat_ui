@@ -465,7 +465,8 @@ class _ChatState extends State<Chat> {
                               ),
                             ),
                     ),
-                    Flexible(
+                    const Align(
+                      alignment: Alignment.bottomLeft,
                       child: TypingIndicator(showIndicator: true),
                     ),
                     widget.customBottomWidget ??
