@@ -20,6 +20,7 @@ import 'inherited_chat_theme.dart';
 import 'inherited_user.dart';
 import 'input.dart';
 import 'message.dart';
+import 'typing_indicator.dart';
 
 /// Entry widget, represents the complete chat. If you wrap it in [SafeArea] and
 /// it should be full screen, set [SafeArea]'s `bottom` to `false`.
@@ -463,6 +464,9 @@ class _ChatState extends State<Chat> {
                                 ),
                               ),
                             ),
+                    ),
+                    Flexible(
+                      child: TypingIndicator(showIndicator: true),
                     ),
                     widget.customBottomWidget ??
                         Input(
